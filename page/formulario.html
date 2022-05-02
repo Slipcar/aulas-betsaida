@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+  </head>
+  <body>
+    <h2>Escala de Louvor</h2>
+    <h3>Músicos</h3>
+    <input id="adicionar_musicos" type="text">
+    <button onclick="adicionar_musicos()">Adicionar</button>
+
+    <ul id="lista">
+        <li>Lucas</li>
+        <li>Janyson</li>
+        <li>Diego</li>
+    </ul>
+
+    <h3>Escala</h3>
+    <textarea id="escala" cols="30" rows="5"></textarea>
+    <br>
+    <button onclick="escalar()">Adicionar</button>
+    <p id="instrumento">Lucas: bateria</p>
+  </body>
+
+  <script>
+      function adicionar_musicos() {
+          var nome_musico = document.getElementById('adicionar_musicos').value
+          var lista = document.getElementById('lista').innerHTML
+
+          var lista_atual = "<li>" + nome_musico + "</li>"
+
+          document.getElementById('lista').innerHTML = lista + lista_atual
+      }
+
+      function escalar(){
+        var textarea = document.getElementById('escala').value
+        var escala = document.getElementById('instrumento').innerHTML
+
+        var escala_atual = "<p>" + textarea + "</p>"
+
+        document.getElementById('instrumento').innerHTML = escala + escala_atual
+      }
+  </script>
+
+</html>
